@@ -1,0 +1,157 @@
+html,
+body {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+}
+
+ul,
+li {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+/* =====================
+  Navbar Styles
+===================== */
+
+.navbar {
+    background-color: transparent;
+    border: none;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: 1000;
+    padding: 16px 32px;
+    height: 80px;
+}
+
+.container-header {
+    display: flex;
+    justify-content: space-between;
+    justify-items: center;
+    height: 80px;
+}
+
+.navbar-logo {
+    display: flex;
+    align-items: center;
+}
+
+.navbar-logo .logo {
+    font-size: 32px;
+    font-family: "Unica One", cursive;
+    cursor: pointer;
+    color: #357429;
+}
+
+.navbar-menu {
+    display: flex;
+    align-items: center;
+}
+
+.navbar-menu ul {
+    display: flex;
+    justify-content: flex-end;
+    justify-items: center;
+    gap: 16px;
+    align-items: center;
+}
+
+.navbar-menu ul li {
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.navbar-menu ul li > a {
+    font-family: "Unica One", cursive;
+    padding-bottom: 0;
+    padding-top: 0;
+    color: #29a598;
+}
+
+.navbar-menu ul li.active > a {
+    color: rgb(219, 82, 82);
+}
+
+.info-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    display: grid;
+    place-content: center;
+    text-align: center;
+    font-family: Courier New, monospace;
+    background: rgba(255, 230, 230);
+    overflow-x: hidden;
+}
+
+.info-container h1 {
+    font-size: 3.5vw;
+    position: relative;
+    width: max-content;
+    font-weight: normal;
+}
+
+.info-container h1:before,
+.info-container h1:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+}
+
+.info-container h1::before {
+    background: rgba(255, 230, 230);
+    animation: write 2.5s steps(25) 0.5s forwards; /* Number of steps */
+    width: 100%;
+}
+
+.info-container h1::after {
+    opacity: 1;
+    width: 0.15em;
+    background: black;
+    animation: write 2.5s steps(25) 0.5s forwards, blink 0.75s steps(2) infinite;
+}
+
+.info-container p {
+    font-size: 2.5vw;
+    opacity: 0.4;
+}
+
+.info-container .bold {
+    font-weight: 600;
+}
+
+@keyframes write {
+    to {
+        left: 100%;
+    }
+}
+
+@keyframes blink {
+    0% {
+        opacity: 0;
+    }
+    49.9% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 1;
+    }
+}
